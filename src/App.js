@@ -10,12 +10,13 @@ const api = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/pokemon/'
 })
 
-const pokeRandom = Math.floor(Math.random() * 920);
+let pokeRandom = Math.floor(Math.random() * 150);
 
 async function listPoke() {
   try {
-    const response = await api.get('50');
-    console.log(response.data.name);
+    const response = await api.get(`${pokeRandom}`);
+    console.log(response.data);
+    console.log(response.data.sprites.front_default);
   } catch (err) {
     console.log(err.response.data);
     console.log(err.response.status);
