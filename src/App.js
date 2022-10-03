@@ -1,21 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-// import axios from 'axios';
+import axios from 'axios';
 
+// 'wild pokemon appear' app
+// 'random team builder' app (3 reject options)
+// 'whos that pokemon' app (guessin game)
 
-// axios.get('https://pokeapi.co/api/v2/evolution-chain/')
-//   .catch(error => console.log(error))
-//   .then(response => console.log(response))
+const api = axios.create({
+  baseURL: 'https://pokeapi.co/api/v2/pokemon/'
+})
+
+const pokeRandom = Math.floor(Math.random() * 920);
+
+async function listPoke() {
+  try {
+    const response = await api.get('50');
+    console.log(response.data.name);
+  } catch (err) {
+    console.log(err.response.data);
+    console.log(err.response.status);
+    console.log(err.response.headers);
+  }
+}
+
+listPoke()
+//   })
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <h1>
-          This will be Pokemon app
+          This will be Pokemon app<br></br>
+
         </h1>
+
         <a className="App-link"
           href="https://reactjs.org"
           target="_blank"
