@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Pokemon from './components/pokemon';
+import Pokemon from './components/Pokemon';
+// import PokedexCard from './components/card'
 
 // - conseguir y mostrar listado de pokemon (20) (como colapsable)
 // - hacer bonito boton de pokemon
@@ -15,6 +16,7 @@ function App() {
         This will be Pokemon app<br></br>
       </h1>
       <main>
+
         <Pokemon />
       </main>
     </div>
